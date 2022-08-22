@@ -11,6 +11,7 @@ function display(cartProduct) {
 
     if(cartArray.length >= 6){
         alert('Set only five player');
+        return;
     }
     else{
         let name = cartArray[i].playerName;
