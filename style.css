@@ -1,0 +1,35 @@
+body{
+    background-color: #151515;
+}
+.container-fluid{
+    background-image: url(images/cover.jpg);
+    height: 480px;
+    
+}
+.text{
+    height: 480px;
+
+}
+
+.header-main-text{
+    color: #FF5E19;
+}
+
+.header-left img{
+    height: 450px;
+    width: px;
+    position: absolute;
+    left: -260px;
+    top: 32px;
+}
+
+p{
+    color: white;
+    text-align: justify;
+}
+.card{
+    background-color: #0D0D0D;
+}
+.card-title{
+    color: #FFFFFF;
+}
