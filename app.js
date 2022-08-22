@@ -6,43 +6,57 @@ function display(cartProduct) {
   body.innerHTML = "";
 
   for (let i = 0; i <= cartArray.length; i++) {
-    let name = cartArray[i].playerName;
+    // let name = cartArray[i].playerName;
     // console.log(name);
 
-    let paragraph = document.createElement("p");
-    paragraph.innerHTML = `<p class="text-center">${i + 1}.  ${name}</p>
-                                `;
-    body.appendChild(paragraph);
+    if(cartArray.length >= 6){
+        alert('Set only five player');
+    }
+    else{
+        let name = cartArray[i].playerName;
+        let paragraph = document.createElement("p");
+        paragraph.innerHTML = `<p class="text-center">${i + 1}.  ${name}</p>`;
+        body.appendChild(paragraph);
 
-    document.getElementById("calculate").addEventListener("click", function () {
-      let perPlayer = parseInt(document.getElementById("per-player").value);
+        document
+          .getElementById("calculate")
+          .addEventListener("click", function () {
+            let perPlayer = parseInt(
+              document.getElementById("per-player").value
+            );
 
-      let totalPlayer = parseInt(i + 1);
+            let totalPlayer = parseInt(i + 1);
 
-      let playerExpense = perPlayer * totalPlayer;
-      // console.log(playerExpense);
+            let playerExpense = perPlayer * totalPlayer;
+            // console.log(playerExpense);
 
-      let expenseValue = document.getElementById("total-expenses");
-      let value = expenseValue.innerText;
+            let expenseValue = document.getElementById("total-expenses");
+            let value = expenseValue.innerText;
 
-      expenseValue.innerText = playerExpense;
+            expenseValue.innerText = playerExpense;
 
-      document
-        .getElementById("total-calculate")
-        .addEventListener("click", function () {
-          let managerValue = parseInt(document.getElementById("manager").value);
-          let coachValue = parseInt(document.getElementById("coach").value);
+            document
+              .getElementById("total-calculate")
+              .addEventListener("click", function () {
+                let managerValue = parseInt(
+                  document.getElementById("manager").value
+                );
+                let coachValue = parseInt(
+                  document.getElementById("coach").value
+                );
 
-          let managerCoach = managerValue + coachValue + playerExpense;
+                let managerCoach = managerValue + coachValue + playerExpense;
 
-          // console.log(managerCoach);
+                // console.log(managerCoach);
 
-          let totalCost = document.getElementById("total-cost");
-          let costValue = totalCost.innerText;
-          totalCost.innerText = managerCoach;
-        });
-    });
+                let totalCost = document.getElementById("total-cost");
+                let costValue = totalCost.innerText;
+                totalCost.innerText = managerCoach;
+              });
+          });
+    }
   }
+  
 }
 function add(element) {
   // console.log(element.parentNode.children[0].innerText);
